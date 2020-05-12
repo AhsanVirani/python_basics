@@ -70,3 +70,10 @@ man_1.add_emp(dev_2)
 man_1.rem_emp(dev_1)
 man_1.check_emp()
 
+print(isinstance(man_1, Manager))
+print(isinstance(man_1, Employee))
+print(isinstance(man_1, Developer))
+
+print(issubclass(Developer, Employee))
+print(issubclass(Manager, Employee))
+print(issubclass(Employee, Developer))
