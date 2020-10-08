@@ -12,7 +12,8 @@ class bcolors:
     UNDERLINE = '\003[4m'
 
 class Person:
-    def __init__(self, hp, mp, atk, df, magic):
+    def __init__(self, name, hp, mp, atk, df, magic):
+        self.name = name
         self.maxhp = hp
         self.hp = hp
         self.maxmp = mp
@@ -34,7 +35,7 @@ class Person:
 
     def heal(self, dmg):
         self.hp += dmg
-        if self.hp > self.get_max_hp:
+        if self.hp > self.maxhp:
             self.hp = self.maxhp
 
     def get_hp(self):
@@ -54,6 +55,7 @@ class Person:
 
     def choose_action(self):
         i = 1
+        print("\n" + self.name + ":")
         print("Actions")
         for item in self.actions:
             print(str(i) + ":", item)
@@ -65,3 +67,8 @@ class Person:
         for spell in self.magic:
             print(str(i) + ":", spell.name, "cost:", str(spell.cost))
             i += 1
+
+    def get_stats(self):
+        print(self.name + "     " + str(self.hp) + "/" + str(self.maxhp) + "        " 
+        + str(self.mp) + "/" + str(self.maxmp))
+    
