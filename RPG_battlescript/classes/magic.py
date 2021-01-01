@@ -13,16 +13,3 @@ class Spell:
         return random.randrange(low, high)
 
 
-'''
-
-    def get_spell_name(self, i):
-        return self.magic[i]["name"]
-
-    def get_spell_cost(self, i):
-        return self.magic[i]["cost"]
-   def generate_spell_damage(self, i):
-        mgl = self.magic[i]["dmg"] - 5
-        mgh = self.magic[i]["dmg"] + 5
-        return random.randrange(mgl, mgh)
-
-'''
