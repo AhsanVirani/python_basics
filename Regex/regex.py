@@ -21,10 +21,34 @@ Mrs. Robinson
 Mr. T
 '''
 
+urls = '''
+https://www.google.com
+http://ahsanvs.com
+https://www.youtube.com
+https://www.nasa.gov
+'''
+
 sentence = 'Start a sentence and then bring it to an end'
 
-pattern = re.compile(r'start', re.I)
+pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
 
-matches = pattern.search(sentence)
 
-print(matches)
+subbed_urls = pattern.sub(r'\2\3', urls)
+
+print(subbed_urls)
+
+# with open('data.txt', 'r') as f:
+#     contents = f.read()
+    
+#     matches = pattern.finditer(urls)
+
+#     for match in matches:
+#         print(match.group(2))
+
+
+
+# pattern = re.compile(r'start', re.I)
+
+# matches = pattern.search(sentence)
+
+# print(matches)
